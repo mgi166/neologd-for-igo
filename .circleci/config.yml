@@ -7,6 +7,8 @@ jobs:
     - checkout
     - setup_remote_docker
     - run:
-        TAG=`date +%Y.%m.%d`
-        git tag $TAG
-        git push origin $TAG
+        name: Push tag
+        command: |
+          TAG=`date +%Y.%m.%d`
+          git tag $TAG
+          git push origin $TAG
